@@ -35,7 +35,7 @@ AppGenerator.prototype.askFor = function askFor() {
   '\n ´   ' + chalk.red('`  |') + '° ' + chalk.red('´ Y') + ' `\n';
 
   console.log(welcome);
-  console.log('This comes with requirejs, jquery, and grunt all ready to go');
+  console.log('This comes with requirejs, lodash, and grunt all ready to go');
 
   if (this.options.promptDefaults) {
      this.appname = this.options.promptDefaults.appname;

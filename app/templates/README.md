@@ -17,7 +17,7 @@ Note: If you don't have `npm` installed, make sure you have
 
 The above steps will download all the required software to
 build and run this app, such as [grunt](http://gruntjs.com),
-[requirejs](http://requirejs.org), and [jquery](http://jquery.com).
+[requirejs](http://requirejs.org), and [lodash](https://github.com/lodash/lodash).
 
 ## Running the server
 
@@ -63,6 +63,6 @@ the only pieces required to run the application in its built
 state is running `grunt`.
 
 If you're using a webserver like apache or nginx, you'll want
-to create a redirect from `/components/requirejs/require.js` to
+to create a redirect from `/bower_components/requirejs/require.js` to
 `/dist/require.js`. (*Note: this is exactly what `grunt
 preview-live` does*)

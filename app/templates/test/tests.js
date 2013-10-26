@@ -33,9 +33,9 @@ define(function() {
   test('is a function', function() {
     expect(1);
     stop();
-    require(['jquery'], function($) {
+    require(['lodash'], function(_) {
       start();
-      strictEqual(typeof $, 'function', 'is a function');
+      strictEqual(typeof _, 'function', 'is a function');
     });
   });
 

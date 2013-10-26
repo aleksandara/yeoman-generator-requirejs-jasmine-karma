@@ -1,6 +1,6 @@
-// to depend on a bower installed component:
-// define(['component/componentName/file'])
+define(["lodash"], function(_) {
+  var info = document.createElement("span");
+  info.textContent = 'lodash ' + _.VERSION + ' loaded!';
 
-define(["jquery"], function($) {
-  $('body').append('jQuery ' + $.fn.jquery + ' loaded!');
+  document.body.appendChild(info);
 });
