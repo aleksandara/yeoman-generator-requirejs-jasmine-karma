@@ -6,7 +6,3 @@ require.config({
     "lodash": "../bower_components/lodash/dist/lodash"
   }
 });
-
-if (!window.requireTestMode) {
-  require(['main'], function(){ });
-}

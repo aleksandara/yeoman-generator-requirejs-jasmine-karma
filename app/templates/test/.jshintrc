@@ -13,22 +13,10 @@
   "browser": true,
   "predef": [
     "_",
-    "QUnit",
-    "require",
-    "define",
-    "module",
-    "test",
-    "asyncTest",
     "expect",
-    "start",
-    "stop",
-    "ok",
-    "equal",
-    "notEqual",
-    "deepEqual",
-    "notDeepEqual",
-    "strictEqual",
-    "notStrictEqual",
-    "throws"
+    "describe",
+    "it",
+    "require",
+    "define"
   ]
 }

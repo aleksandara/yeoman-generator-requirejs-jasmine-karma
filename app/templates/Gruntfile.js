@@ -1,7 +1,6 @@
 'use strict';
 
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -23,7 +22,7 @@ module.exports = function(grunt) {
       dist: {
         src: ['bower_components/requirejs/require.js', '<%%= concat.dist.dest %>'],
         dest: 'dist/require.js'
-      },
+      }
     },
     uglify: {
       options: {
@@ -32,10 +31,24 @@ module.exports = function(grunt) {
       dist: {
         src: '<%%= concat.dist.dest %>',
         dest: 'dist/require.min.js'
-      },
+      }
     },
-    qunit: {
-      files: ['test/**/*.html']
+    jasmine: {
+      test: {
+        src: ['app/**/*.js', '!app/config.js'],
+        options: {
+          specs: 'test/*Spec.js',
+          helpers: 'test/*Helper.js',
+          keepRunner: true,
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfigFile: 'app/config.js',
+            requireConfig: {
+              baseUrl: 'app/'
+            }
+          }
+        }
+      }
     },
     jshint: {
       gruntfile: {
@@ -55,7 +68,7 @@ module.exports = function(grunt) {
           jshintrc: 'test/.jshintrc'
         },
         src: ['test/**/*.js']
-      },
+      }
     },
     watch: {
       gruntfile: {
@@ -64,11 +77,11 @@ module.exports = function(grunt) {
       },
       src: {
         files: '<%%= jshint.src.src %>',
-        tasks: ['jshint:src', 'qunit']
+        tasks: ['jshint:src', 'jasmine']
       },
       test: {
         files: '<%%= jshint.test.src %>',
-        tasks: ['jshint:test', 'qunit']
+        tasks: ['jshint:test', 'jasmine']
       },
     },
     requirejs: {
@@ -84,17 +97,17 @@ module.exports = function(grunt) {
     connect: {
       development: {
         options: {
-          keepalive: true,
+          keepalive: true
         }
       },
       production: {
         options: {
           keepalive: true,
           port: 8000,
-          middleware: function(connect, options) {
+          middleware: function (connect, options) {
             return [
               // rewrite requirejs to the compiled version
-              function(req, res, next) {
+              function (req, res, next) {
                 if (req.url === '/bower_components/requirejs/require.js') {
                   req.url = '/dist/require.min.js';
                 }
@@ -113,15 +126,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'requirejs', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'jasmine', 'clean', 'requirejs', 'concat', 'uglify']);
   grunt.registerTask('preview', ['connect:development']);
   grunt.registerTask('preview-live', ['default', 'connect:production']);
+  grunt.registerTask('test', ['jasmine']);
 
 };
