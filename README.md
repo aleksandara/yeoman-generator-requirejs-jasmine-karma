@@ -11,10 +11,5 @@ A generator for [Yeoman](http://yeoman.io).
 - Run: `yo requirejs`
 
 
-## Demo Application
-
-Run `yo requirejs:demo` to scaffold out a demo application.
-
-
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
