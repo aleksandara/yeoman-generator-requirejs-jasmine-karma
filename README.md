@@ -1,4 +1,4 @@
-# RequireJS Yeoman Generator [![Build Status](https://secure.travis-ci.org/danheberden/yeoman-generator-require.png?branch=master)](https://travis-ci.org/danheberden/yeoman-generator-require)
+# RequireJS Yeoman Generator
 
 A generator for [Yeoman](http://yeoman.io).
 

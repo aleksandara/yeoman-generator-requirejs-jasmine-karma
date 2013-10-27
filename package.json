@@ -1,21 +1,21 @@
 {
-  "name": "generator-requirejs",
-  "version": "0.2.0",
-  "description": "A generator for Yeoman",
+  "name": "generator-requirejs-jasmine-karma",
+  "version": "0.1.0",
+  "description": "A generator for yeoman (RequireJS, Jasmine, Karma)",
   "keywords": [
     "yeoman-generator"
   ],
-  "homepage": "https://github.com/danheberden/yeoman-generator-requirejs",
-  "bugs": "https://github.com/danheberden/yeoman-generator-requirejs/issues",
+  "homepage": "https://github.com/aleksandara/yeoman-generator-requirejs-jasmine-karma",
+  "bugs": "https://github.com/aleksandara/yeoman-generator-requirejs-jasmine-karma/issues",
   "author": {
-    "name": "danheberden",
-    "email": "danheberden@gmail.com",
-    "url": "https://github.com/danheberden"
+    "name": "aleksandara",
+    "email": "aleksandara@gmail.com",
+    "url": "https://github.com/aleksandara"
   },
-  "main": "app/index.js",
+  "main": "app/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danheberden/yeoman-generator-requirejs.git"
+    "url": "https://github.com/aleksandara/yeoman-generator-requirejs-jasmine-karma.git"
   },
   "scripts": {
     "test": "mocha"
