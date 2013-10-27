@@ -39,7 +39,6 @@ module.exports = function (grunt) {
         options: {
           specs: 'test/*Spec.js',
           helpers: 'test/*Helper.js',
-          keepRunner: true,
           template: require('grunt-template-jasmine-requirejs'),
           templateOptions: {
             requireConfigFile: 'app/config.js',
@@ -72,15 +71,15 @@ module.exports = function (grunt) {
     },
     watch: {
       gruntfile: {
-        files: '<%%= jshint.gruntfile.src %>',
+        files: 'Gruntfile.js',
         tasks: ['jshint:gruntfile']
       },
       src: {
-        files: '<%%= jshint.src.src %>',
+        files: ['app/**/*.js'],
         tasks: ['jshint:src', 'jasmine']
       },
       test: {
-        files: '<%%= jshint.test.src %>',
+        files: ['test/**/*.js'],
         tasks: ['jshint:test', 'jasmine']
       },
     },
