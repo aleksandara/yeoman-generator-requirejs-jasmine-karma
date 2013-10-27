@@ -49,6 +49,11 @@ module.exports = function (grunt) {
         }
       }
     },
+    karma: {
+      karma: {
+        configFile: 'karma.conf.js'
+      }
+    },
     jshint: {
       gruntfile: {
         options: {
@@ -130,11 +135,11 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-karma');
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'jasmine', 'clean', 'requirejs', 'concat', 'uglify']);
   grunt.registerTask('preview', ['connect:development']);
   grunt.registerTask('preview-live', ['default', 'connect:production']);
   grunt.registerTask('test', ['jasmine']);
-
 };

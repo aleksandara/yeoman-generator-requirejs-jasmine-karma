@@ -75,6 +75,10 @@ AppGenerator.prototype.bower = function bower() {
   this.template('_bower.json', 'bower.json');
 };
 
+AppGenerator.prototype.karma = function karma() {
+  this.template('_karma.conf.js', 'karma.conf.js')
+}
+
 AppGenerator.prototype.git = function git() {
   this.copy('gitignore', '.gitignore');
 };

@@ -17,6 +17,7 @@
     "describe",
     "it",
     "require",
-    "define"
+    "define",
+    "requirejs"
   ]
 }
