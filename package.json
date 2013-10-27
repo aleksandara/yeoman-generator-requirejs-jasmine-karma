@@ -1,6 +1,6 @@
 {
   "name": "generator-requirejs-jasmine-karma",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A generator for yeoman (RequireJS, Jasmine, Karma)",
   "keywords": [
     "yeoman-generator"
