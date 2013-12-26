@@ -7,7 +7,7 @@ A generator for [Yeoman](http://yeoman.io).
 - Make sure you have [yo](https://github.com/yeoman/yo) installed:
     `npm install -g yo`
 - Install the generator: `npm install -g generator-requirejs-jasmine-karma` *(locally works too)*
-- Run: `yo requirejs`
+- Run: `yo requirejs-jasmine-karma:app`
 
 
 ## License
