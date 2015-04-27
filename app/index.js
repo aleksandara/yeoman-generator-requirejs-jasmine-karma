@@ -24,18 +24,20 @@ AppGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // welcome message
-  var welcome =
-  '\n     _-----_' +
-  '\n    |       |' +
-  '\n    |' + chalk.red('--(o)--') + '|   .--------------------------.' +
-  '\n   `---------´  |    ' + chalk.yellow.bold('Welcome to Yeoman') + ',    |' +
-  '\n    ' + chalk.yellow('(') + ' _' + chalk.yellow('´U`') + '_ ' + chalk.yellow(')') + '   |   ' + chalk.yellow.bold('ladies and gentlemen!') + '  |' +  '\n    /___A___\\   \'__________________________\'' +
-  '\n     ' + chalk.yellow('|  ~  |') +
-  '\n   __' + chalk.yellow('\'.___.\'') + '__' +
-  '\n ´   ' + chalk.red('`  |') + '° ' + chalk.red('´ Y') + ' `\n';
+  if (!this.options['skip-welcome-message'])
+    var welcome =
+    '\n     _-----_' +
+    '\n    |       |' +
+    '\n    |' + chalk.red('--(o)--') + '|   .--------------------------.' +
+    '\n   `---------´  |    ' + chalk.yellow.bold('Welcome to Yeoman') + ',    |' +
+    '\n    ' + chalk.yellow('(') + ' _' + chalk.yellow('´U`') + '_ ' + chalk.yellow(')') + '   |   ' + chalk.yellow.bold('ladies and gentlemen!') + '  |' +  '\n    /___A___\\   \'__________________________\'' +
+    '\n     ' + chalk.yellow('|  ~  |') +
+    '\n   __' + chalk.yellow('\'.___.\'') + '__' +
+    '\n ´   ' + chalk.red('`  |') + '° ' + chalk.red('´ Y') + ' `\n';
 
-  console.log(welcome);
-  console.log('This comes with requirejs, lodash, and grunt all ready to go');
+    console.log(welcome);
+    console.log('This comes with requirejs, lodash, and grunt all ready to go');
+  }
 
   if (this.options.promptDefaults) {
      this.appname = this.options.promptDefaults.appname;
